@@ -2,7 +2,7 @@
   "name": "test_2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "root.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack",
@@ -30,6 +30,8 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-mixin": "^2.0.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "style-loader": "^0.21.0"
   }
 }

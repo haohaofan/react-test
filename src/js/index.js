@@ -1,12 +1,12 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
-
+import ComponentDetails from './components/details';
+import {Route, Switch} from 'react-router-dom';
 import 'antd/dist/antd.css';
 
 import ComponentHeader from './components/header';
 import ComponentFooter from './components/footer';
 import BodyIndex from './components/bodyindex';
-class Index extends React.Component {
+export default class Index extends React.Component {
 
 	componentWillMount(){
 		//定义你的逻辑即可
@@ -31,10 +31,12 @@ class Index extends React.Component {
 			<div>
 				<ComponentHeader/>
 				<BodyIndex userid={123456} username={"mr right"}/>
+				<Switch>
+					<Route component={ComponentDetails} path="/details"></Route>
+				</Switch>
 				<ComponentFooter/>
 			</div>
 		);
 	}
 }
-ReactDOM.render(
-	<Index/>, document.getElementById('example'));
+

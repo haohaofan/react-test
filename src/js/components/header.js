@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 export default class ComponentHeader extends React.Component {
     constructor() {
         super();
@@ -30,6 +30,11 @@ export default class ComponentHeader extends React.Component {
                     onClick={this.switchHeader.bind(this)}>
                 <h1>这里是头部</h1>
                 {/*由于安装了插件babel-plugin-react-html-attrs， 所以可以直接使用class替代className*/}
+                <ul>
+                    <li><Link to={`/`}>首页</Link></li>
+                    <li><Link to={`/details`}>嵌套的详情页面</Link></li>
+                    <li><Link to={`/list`}>列表页面</Link></li>
+                </ul>
             </header>
         )
     }
