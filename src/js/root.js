@@ -1,23 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Index from './index';
-import ComponentList from './components/list';
+import { Button } from 'antd';
+import 'antd/dist/antd.css';
+
 import {Route,BrowserRouter, Switch,HashRouter} from 'react-router-dom';
 // import { Router, Route, Switch } from 'react-router'
-
 
 class Root extends React.Component{
   render(){
       return (
-          <BrowserRouter>
-              <Switch>
-                  <Route path="/list/:id" component={ComponentList}></Route>
-                  <Route exact path="/" component={Index}></Route>
-                  <Route path="/details" component={Index}></Route>
-              </Switch>
-          </BrowserRouter>
+          <div>
+              <Button type="primary">Primary</Button>
+              <Button>Default</Button>
+              <Button type="dashed">Dashed</Button>
+              <Button type="danger">Danger</Button>
+          </div>
       );
   };
 }
 
-ReactDOM.render(<Root/>, document.getElementById('example'));
+ReactDOM.render(<Root/>, document.getElementById('mainContainer'));
