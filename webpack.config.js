@@ -9,7 +9,7 @@ module.exports = {
     entry: "./src/js/root.js",
     module: {
         rules: [
-            {
+            {//ES6、JSX处理
                 test: /\.js?$/,
                 exclude: /(node_modules)/,
                 use: [
@@ -21,23 +21,39 @@ module.exports = {
                             ],
                             plugins: [
                                 "react-html-attrs",//添加组件的插件配置
+                                //antd按需加载
                                 ["import", {"libraryName": "antd", "libraryDirectory": "es", "style": "css"}] // `style: true` 会加载 less 文件
-                            ]
+                            ],
+                            compact: true,
                         }
                     }
                 ],
             },
-            //下面是添加的 css 的 loader，也即是 css 模块化的配置方法，大家可以拷贝过去直接使用
-            {
+            {//CSS处理
                 test: /\.css$/,
+                exclude: /(node_modules)/,
+                loader: "style-loader!css-loader?modules",
+                // use: [
+                //     {loader: 'style-loader'},
+                //     {
+                //         loader: 'css-loader',
+                //         options: {
+                //             modules: true,
+                //             // importLoaders:1,
+                //             //  localIdentName: '[path][name]__[local]__[hash:base64:5]' //模块的css类名进行压缩 Configure the generated ident
+                //         }
+                //     }
+                // ]
+            },
+            {//antd样式处理
+                test: /\.css$/,
+                exclude: /(src)/,
                 use: [
                     {loader: 'style-loader'},
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true,
-                            // importLoaders:1,
-                            //  localIdentName: '[path][name]__[local]__[hash:base64:5]' //模块的css类名进行压缩 Configure the generated ident
+                            importLoaders:1,
                         }
                     }
                 ]
