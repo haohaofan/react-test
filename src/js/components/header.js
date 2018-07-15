@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link , NavLink} from 'react-router-dom';
 export default class ComponentHeader extends React.Component {
     constructor() {
         super();
@@ -33,7 +33,10 @@ export default class ComponentHeader extends React.Component {
                 <ul>
                     <li><Link to={`/`}>首页</Link></li>
                     <li><Link to={`/details`}>嵌套的详情页面</Link></li>
-                    <li><Link to={`/list`}>列表页面</Link></li>
+                    <li><Link to={{
+                        pathname:`/list/123`,
+                        search:"?name=hello"
+                    }}>列表页面</Link></li>
                 </ul>
             </header>
         )
