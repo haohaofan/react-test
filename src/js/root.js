@@ -11,8 +11,9 @@ class Root extends React.Component{
       return (
           <BrowserRouter>
               <Switch>
-                  <Route exact path="/list/:id" component={ComponentList}></Route>
-                  <Route path="/" component={Index}></Route>
+                  <Route path="/list/:id" component={ComponentList}></Route>
+                  <Route exact path="/" component={Index}></Route>
+                  <Route path="/details" component={Index}></Route>
               </Switch>
           </BrowserRouter>
       );
