@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MediaQuery from 'react-responsive';
 import {Button} from 'antd';
 import PCIndex from './components/pc_index';
 import 'antd/dist/antd.css';
+import MobileIndex from './components/mobile_index';
 
 import {Route, BrowserRouter, Switch, HashRouter} from 'react-router-dom';
 
@@ -11,7 +13,14 @@ import {Route, BrowserRouter, Switch, HashRouter} from 'react-router-dom';
 class Root extends React.Component {
     render() {
         return (
-            <PCIndex></PCIndex>
+            <div>
+                <MediaQuery query="(min-device-width: 1224px)">
+                    <PCIndex></PCIndex>
+                </MediaQuery>
+                <MediaQuery query="(max-device-width: 1224px)">
+                    <MobileIndex/>
+                </MediaQuery>
+            </div>
         );
     };
 }
