@@ -32,6 +32,7 @@
     "react-mixin": "^2.0.2",
     "react-responsive": "^5.0.0",
     "react-router-dom": "^4.3.1",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.21.0",
+    "whatwg-fetch": "^2.0.4"
   }
 }
