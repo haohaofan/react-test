@@ -15,10 +15,18 @@ class Root extends React.Component {
         return (
             <div>
                 <MediaQuery query="(min-device-width: 1224px)">
-                    <PCIndex></PCIndex>
+                    <BrowserRouter>
+                        <Switch>
+                            <Route exact path="/" component={PCIndex}></Route>
+                        </Switch>
+                    </BrowserRouter>
                 </MediaQuery>
                 <MediaQuery query="(max-device-width: 1224px)">
-                    <MobileIndex/>
+                    <BrowserRouter>
+                        <Switch>
+                            <Route exact path="/" component={MobileIndex}></Route>
+                        </Switch>
+                    </BrowserRouter>
                 </MediaQuery>
             </div>
         );
