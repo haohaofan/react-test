@@ -30,6 +30,13 @@ class MobileHeader extends React.Component {
             userid: 0
         };
     };
+    componentWillMount(){
+        //若本地存储用户信息，直接登录
+        if (localStorage.userid!='') {
+            this.setState({hasLogined:true});
+            this.setState({userNickName:localStorage.userNickName,userid:localStorage.userid});
+        }
+    };
     setModalVisible(value)
     {
         this.setState({modalVisible: value});
@@ -53,8 +60,15 @@ class MobileHeader extends React.Component {
         };
         var formData= this.props.form.getFieldsValue();
         console.log(formData);
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=register&username=userName&password=password&r_userName="+formData.r_userName+"&r_password="+formData.r_password+"&r_confirmPassword="+formData.r_confirmPassword,myFetchOptions).
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=" + this.state.action
+            +"&username="+formData.userName+"&password=password"+formData.password
+            +"&r_userName=" +formData.r_userName+"&r_password="+formData.r_password
+            +"&r_confirmPassword="+formData.r_confirmPassword,myFetchOptions).
         then(response=>response.json()).then(json=>{
+            json = {
+                "NickUserName" : "test",
+                "UserId" : "88"
+            };
             this.setState({userNickName:json.NickUserName,userid:json.UserId});
 
         });
@@ -74,12 +88,23 @@ class MobileHeader extends React.Component {
             this.setState({action: 'register'});
         }
     };
+
+    logout() {
+        localStorage.userid = '';
+        localStorage.userNickName = '';
+        this.setState({hasLogined: false});
+    };
     render() {
         let {getFieldDecorator} = this.props.form;
         const userShow = this.state.hasLogined ?
-            <Link to="/">
-                <Icon type="inbox"/>
-            </Link>
+            <ul>
+                <li>
+                    <Link to="/">
+                        <Icon type="inbox"/>
+                    </Link>
+                </li>
+                <li class="logout"  onClick={this.logout.bind(this)}>退出</li>
+            </ul>
             :
             <Icon type="setting" onClick={this.login.bind(this)}/>
         return (
