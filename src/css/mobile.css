@@ -44,4 +44,6 @@ html{
   margin-top: 0.3rem;
   color:#2db7f5;
 }
-
+.ant-tabs{
+  width:100%;
+}
