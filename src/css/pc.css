@@ -174,7 +174,9 @@ iframe {
 {
   display: inline-block !important;
 }
-
+.ant-modal{
+  width: 560px!important;
+}
 
 /*Footer******Start*****/
 
