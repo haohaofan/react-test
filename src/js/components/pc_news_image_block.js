@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card} from 'antd';
 import {Link, NavLink} from 'react-router-dom';
-export default class PCNewsBlock extends React.Component {
+export default class PCNewsImageBlock extends React.Component {
     constructor() {
         super();
         this.state = {

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import MediaQuery from 'react-responsive';
 import {Button} from 'antd';
 import PCIndex from './components/pc_index';
+import PCNewsDetails from './components/pc_news_details';
 import 'antd/dist/antd.css';
 import MobileIndex from './components/mobile_index';
 
@@ -17,7 +18,8 @@ class Root extends React.Component {
                 <MediaQuery query="(min-device-width: 1224px)">
                     <BrowserRouter>
                         <Switch>
-                            <Route exact path="/" component={PCIndex}></Route>
+                            <Route  exact path="/" component={PCIndex}></Route>
+                            <Route  path="/details/:uniquekey" component={PCNewsDetails}></Route>
                         </Switch>
                     </BrowserRouter>
                 </MediaQuery>
