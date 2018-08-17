@@ -10,18 +10,18 @@
             init: function () {
                 var width=document.documentElement.clientWidth;
                 if(width > 1224){
-                    document.getElementById("main_css").setAttribute("href","./src/css/pc.css");
+                    document.getElementById("main_css").setAttribute("href","/src/css/pc.css");
                 }else{
-                    document.getElementById("main_css").setAttribute("href","./src/css/mobile.css");
+                    document.getElementById("main_css").setAttribute("href","/src/css/mobile.css");
                 }
             },
             addEventListener: function () {
                 window.addEventListener("resize", function () {
                     var width=document.documentElement.clientWidth;
                     if(width > 1224){
-                        document.getElementById("main_css").setAttribute("href","./src/css/pc.css");
+                        document.getElementById("main_css").setAttribute("href","/src/css/pc.css");
                     }else{
-                        document.getElementById("main_css").setAttribute("href","./src/css/mobile.css");
+                        document.getElementById("main_css").setAttribute("href","/src/css/mobile.css");
                     }
                 }, false);
             }
@@ -32,6 +32,6 @@
 </head>
 <body>
     <div id="mainContainer">123</div>
-    <script src="./dist/bundle.js"></script>
+    <script src="/dist/bundle.js"></script>
 </body>
 </html>
