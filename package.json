@@ -17,7 +17,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "antd": "^3.7.0",
+    "antd": "^3.8.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-import": "^1.8.0",
@@ -27,8 +27,8 @@
     "babelify": "^8.0.0",
     "css-loader": "^0.28.11",
     "prop-types": "^15.6.2",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-mixin": "^2.0.2",
     "react-responsive": "^5.0.0",
     "react-router-dom": "^4.3.1",
