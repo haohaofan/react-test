@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col} from 'antd';
+import {Row, Col, BackTop} from 'antd';
 import PCHeader from './pc_header';
 import PCFooter from './pc_footer';
 import PCNewsImageBlock from './pc_news_image_block';
@@ -39,6 +39,7 @@ export default class PCNewsDetails extends React.Component {
 					<Col span={2}></Col>
 				</Row>
 				<PCFooter></PCFooter>
+                <BackTop/>
 			</div>
 		);
 	};
