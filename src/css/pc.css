@@ -86,7 +86,7 @@
 }
 .ant-tabs{
   margin-left: 10px !important;
-  width: 500px !important;
+  /*width: 500px !important;*/
 }
 .ant-tabs-nav-container{
   text-align: left!important;
