@@ -26,6 +26,7 @@ export default class MobileUserCenter extends React.Component {
         this.state = {
             userCollection: '',
             previewImage: '',
+            userComments: '',
             previewVisible: false
         };
     };
@@ -38,6 +39,12 @@ export default class MobileUserCenter extends React.Component {
             .then(response=>response.json())
             .then(json=>{
                 this.setState({userCollection:json});
+            });
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getusercomments&userid=" +
+            localStorage.userid, myFetchOptions)
+            .then(response=>response.json())
+            .then(json=>{
+                this.setState({userComments:json});
             });
     };
     handleCancel(){
@@ -63,7 +70,7 @@ export default class MobileUserCenter extends React.Component {
                 this.setState({previewImage:file.url,previewVisible:true});
             }
         };
-        const {userCollection} = this.state;
+        const {userCollection,userComments} = this.state;
         const userCollectionList = userCollection.length ?
             userCollection.map((uc,index)=>(
                 <Card key={index} title={uc.uniquekey} extra={<a href={`/details/${uc.uniquekey}`}>查看</a>}>
@@ -72,6 +79,14 @@ export default class MobileUserCenter extends React.Component {
             ))
             :
             '您还没有收藏任何的新闻，快去收藏一些新闻吧。';
+        const userCommentsList = userComments.length ?
+            userComments.map((comment,index)=>(
+                <Card key={index} title={`于 ${comment.datetime} 评论了文章 ${comment.uniquekey}`} extra={<a target="_blank" href={`/details/${comment.uniquekey}`}>查看</a>}>
+                    <p>{comment.Comments}</p>
+                </Card>
+            ))
+            :
+            '您还没有发表过任何评论。';
 		return (
 			<div>
 				<MobileHeader/>
@@ -85,7 +100,13 @@ export default class MobileUserCenter extends React.Component {
                                     </Col>
                                 </Row>
                             </TabPane>
-							<TabPane tab="我的评论列表" key="2"></TabPane>
+							<TabPane tab="我的评论列表" key="2">
+                                <Row>
+                                    <Col span={24}>
+                                        {userCommentsList}
+                                    </Col>
+                                </Row>
+                            </TabPane>
                             <TabPane tab="头像设置" key="3">
                                 <div className="clearfix">
                                     <Upload {...props}>
