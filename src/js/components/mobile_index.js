@@ -4,6 +4,7 @@ import MobileFooter from './mobile_footer';
 import {Tabs,Carousel} from 'antd';
 const TabPane = Tabs.TabPane;
 import MobileList from './mobile_list';
+import MobileListPullRefresh from './mobile_list_pull_refresh';
 export default class MobileIndex extends React.Component {
 	render() {
         const settings = {
@@ -29,7 +30,7 @@ export default class MobileIndex extends React.Component {
                         <MobileList count={20} type="top"/>
                     </TabPane>
                     <TabPane tab="社会" key="2">
-                        <MobileList count={20} type="shehui"/>
+                        <MobileListPullRefresh count={20} type="shehui"/>
                     </TabPane>
                     <TabPane tab="国内" key="3">
                         <MobileList count={20} type="guonei"/>

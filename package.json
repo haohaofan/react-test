@@ -32,6 +32,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-mixin": "^2.0.2",
+    "react-pull-to-refresh": "^1.1.2",
     "react-responsive": "^5.0.0",
     "react-router-dom": "^4.3.1",
     "react-touch-loader": "^1.1.4",
