@@ -199,3 +199,14 @@ section{background:#f6f6f6;width:6.9rem}
 .ant-carousel .slick-slide img{
   width: 100%!important;
 }
+
+
+.tloader .tloader-btn:after{
+  content: 'Load More';
+}
+/*下拉刷新*/
+.tloader{
+  height: 500px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}

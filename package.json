@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "lessc": "lessc ./src/less/mobile.less > ./src/less/xxx.css"
   },
   "author": "",
   "license": "ISC",
@@ -26,12 +27,14 @@
     "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
     "css-loader": "^0.28.11",
+    "less-loader": "^4.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-mixin": "^2.0.2",
     "react-responsive": "^5.0.0",
     "react-router-dom": "^4.3.1",
+    "react-touch-loader": "^1.1.4",
     "style-loader": "^0.21.0",
     "whatwg-fetch": "^2.0.4"
   }
